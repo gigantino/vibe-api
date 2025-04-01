@@ -15,15 +15,16 @@ Is it fast? Absolutely not. But does it vibe? As long as you don't somehow confu
 (Ensure you have [Bun](https://bun.sh/) installed on your system.)
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/gigantino/vibe-api.git
    ```
 
-````
 2. **Navigate to the project directory and install dependencies:**
+
 ```bash
 cd vibe-api && bun install
-````
+```
 
 3. **Copy and edit the environment variables:**
 
@@ -55,4 +56,6 @@ X-VibeApi-Authorization: <your-api-key>
 X-VibeApi-Refresh: true
 ```
 
-⚠️ Vibe with care ⚠️
+## Enjoy
+
+⚠️ Always make sure to vibe with care ⚠️
