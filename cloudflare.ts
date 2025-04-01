@@ -1,7 +1,7 @@
 import type { Generator } from "elysia-rate-limit";
 import ipaddr from "ipaddr.js";
 
-const cloudflareIPv4Ranges: string[] = [
+const cloudflareIPv4Ranges = [
   "173.245.48.0/20",
   "103.21.244.0/22",
   "103.22.200.0/22",
@@ -19,7 +19,7 @@ const cloudflareIPv4Ranges: string[] = [
   "131.0.72.0/22",
 ];
 
-const cloudflareIPv6Ranges: string[] = [
+const cloudflareIPv6Ranges = [
   "2400:cb00::/32",
   "2606:4700::/32",
   "2803:f800::/32",
@@ -29,7 +29,7 @@ const cloudflareIPv6Ranges: string[] = [
   "2c0f:f248::/32",
 ];
 
-function isIpInRanges(ip: string, ranges: string[]): boolean {
+function isIpInRanges(ip: string, ranges: string[]) {
   try {
     const parsedIp = ipaddr.parse(ip);
     return ranges.some((range) => {
