@@ -2,9 +2,9 @@ import "./env";
 import OpenAI from "openai";
 import { Elysia, error } from "elysia";
 import { rateLimit, defaultOptions } from "elysia-rate-limit";
-import { staticPlugin } from "@elysiajs/static";
 import { Database } from "bun:sqlite";
 import { cloudflareGenerator } from "./cloudflare";
+import { POSTHOG_SCRIPT_STRING } from "./posthog";
 
 const openai = new OpenAI({
   apiKey: Bun.env.GEMINI_API_KEY,
@@ -55,14 +55,19 @@ const app = new Elysia()
       },
     })
   )
-  .use(
-    staticPlugin({
-      prefix: "/",
-      alwaysStatic: true,
-    })
-  )
   .get("/", async () => {
-    return Bun.file("./public/index.html");
+    let htmlContent = await Bun.file("./public/index.html").text();
+
+    if (typeof Bun.env.POSTHOG_PROJECT_API_KEY === "string") {
+      htmlContent = htmlContent.replace(
+        "<!-- POSTHOG-PLACEHOLDER -->",
+        POSTHOG_SCRIPT_STRING
+      );
+    }
+
+    return new Response(htmlContent, {
+      headers: { "Content-Type": "text/html" },
+    });
   })
   .all("*", async ({ request }: { request: Request }) => {
     const headersObj: Record<string, string> = {};

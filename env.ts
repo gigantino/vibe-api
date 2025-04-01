@@ -7,6 +7,7 @@ const envVariables = z.object({
   RATE_LIMIT_DURATION: z.string(),
   PORT: z.string(),
   IS_BEHIND_CLOUDFLARE_TUNNEL: z.string(),
+  POSTHOG_PROJECT_API_KEY: z.string().optional(),
 });
 
 envVariables.parse(process.env);
