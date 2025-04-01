@@ -45,17 +45,17 @@ bun i && bun index.ts
   Include your API key in this header to disable all rate limits for your requests.  
   _Example usage:_
 
-```http
-X-VibeApi-Authorization: <your-api-key>
-```
+  ```http
+  X-VibeApi-Authorization: <your-api-key>
+  ```
 
 - **`X-VibeApi-Refresh`**  
   Set this header to `true` to force a refresh of the schema stored in the database. Useful when updates or changes have occurred.  
   _Example usage:_
 
-```http
-X-VibeApi-Refresh: true
-```
+  ```http
+  X-VibeApi-Refresh: true
+  ```
 
 ## Enjoy
 
