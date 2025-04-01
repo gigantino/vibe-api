@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 const envVariables = z.object({
-  OPENAI_API_KEY: z.string(),
+  GEMINI_API_KEY: z.string(),
   AUTHORIZATION_KEY: z.string(),
   RATE_LIMIT_MAX: z.string(),
   RATE_LIMIT_DURATION: z.string(),

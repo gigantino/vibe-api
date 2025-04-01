@@ -7,7 +7,8 @@ import { Database } from "bun:sqlite";
 import { cloudflareGenerator } from "./cloudflare";
 
 const openai = new OpenAI({
-  apiKey: Bun.env.OPENAI_API_KEY,
+  apiKey: Bun.env.GEMINI_API_KEY,
+  baseURL: "https://generativelanguage.googleapis.com/v1beta/openai",
 });
 
 const db = new Database("history.db");
@@ -21,6 +22,13 @@ db.run(`
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
 `);
+
+/** Strips away markdown from JSON responses */
+const removeMarkdown = (input: string) => {
+  const regex = /```(?:\w+\n)?([\s\S]*?)```/;
+  const match = input.match(regex);
+  return match ? match[1].trim() : input;
+};
 
 const app = new Elysia()
   .use(
@@ -40,6 +48,8 @@ const app = new Elysia()
         ? cloudflareGenerator
         : defaultOptions.generator,
       skip: (request) => {
+        const url = new URL(request.url);
+        if (url.pathname === "/") return true;
         const authHeader = request.headers.get("X-VibeApi-Authorization");
         return authHeader === Bun.env.AUTHORIZATION_KEY;
       },
@@ -121,7 +131,7 @@ const app = new Elysia()
     `;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: "gemini-2.0-flash",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
@@ -131,7 +141,7 @@ const app = new Elysia()
     const responseText = completion.choices[0].message.content || "{}";
 
     try {
-      const vibeResponse = JSON.parse(responseText);
+      const vibeResponse = JSON.parse(removeMarkdown(responseText));
       if (shouldRefresh) {
         db.run(
           `

@@ -2,12 +2,12 @@
 
 Do you consider yourself a [vibe coder](https://en.wikipedia.org/wiki/Vibe_coding)? Then why waste your precious vibe-checking energy building APIs when the vibes alone can give you everything you could ever dream of?
 
-Forget documentation. Forget strict routing. With the power of ~ vibes ~, every endpoint is already there—waiting for you. Want your IP address? Hit up https://vibe-api.ggtn.ch/whats-my-ip, or honestly, misspell it wildly—it'll probably still vibe-check correctly. Need a random joke? Say less. https://vibe-api.ggtn.ch/random-joke will deliver one—most likely an unfunny one, but hey, it's the vibe that counts.
+Forget documentation. Forget strict routing. With the power of ~ vibes ~, every endpoint is already there—waiting for you. Want your IP address? Hit up https://vibe-api.ggtn.ch/whats-my-ip, or honestly, misspell it wildly—it'll probably still vibe-check correctly (here you go: https://vibe-api.ggtn.ch/wat-is-my-ip). Need a random joke? Say less. https://vibe-api.ggtn.ch/random-joke will deliver one—most likely an unfunny one, but hey, it's the vibe that counts.
 
-Is it fast? Absolutely not. But does it vibe? As long as you don't somehow confuse ChatGPT, the answer is a solid probably.
+Is it fast? Absolutely not. But does it vibe? As long as you don't somehow confuse the LLM, the answer is a solid probably.
 
 > [!WARNING]  
-> Vibes are meant to be self-hosted. You're free to use my heavily rate-limited version, but just know that each request slowly drains my precious ChatGPT credits and my bank account is already begging for mercy.
+> Vibes are meant to be self-hosted. You're free to use my heavily rate-limited version, but just know that each request slowly drains my precious AI credits and my bank account is already begging for mercy.
 
 ## Installation & Usage
 

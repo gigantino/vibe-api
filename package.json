@@ -1,5 +1,6 @@
 {
   "name": "vibe-api",
+  "description": "The API for Vibe Coders",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
@@ -13,7 +14,6 @@
     "@elysiajs/static": "^1.2.0",
     "elysia": "^1.2.25",
     "elysia-rate-limit": "^4.3.0",
-    "express": "^5.1.0",
     "ipaddr.js": "^2.2.0",
     "openai": "^4.91.0",
     "zod": "^3.24.2"
