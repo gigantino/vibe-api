@@ -8,6 +8,7 @@ Forget documentation. Forget strict routing. With the power of ~vibes~, every en
 
 Is it fast? Absolutely not. But does it vibe? As long as you don't somehow confuse ChatGPT, the answer is a solid probably.
 
+> [!WARNING]  
 > Vibes are meant to be self-hosted. You're free to use my heavily rate-limited version, but just know that each request slowly drains my precious ChatGPT credits and my bank account is already begging for mercy.
 
 ## Installation & Usage
