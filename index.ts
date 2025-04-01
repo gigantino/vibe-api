@@ -2,6 +2,7 @@ import "./env";
 import OpenAI from "openai";
 import { Elysia, error } from "elysia";
 import { rateLimit, defaultOptions } from "elysia-rate-limit";
+import { staticPlugin } from "@elysiajs/static";
 import { Database } from "bun:sqlite";
 import { cloudflareGenerator } from "./cloudflare";
 
@@ -44,8 +45,14 @@ const app = new Elysia()
       },
     })
   )
-  .get("/", ({ redirect }) => {
-    return redirect("https://github.com/gigantino/vibe-api");
+  .use(
+    staticPlugin({
+      prefix: "/",
+      alwaysStatic: true,
+    })
+  )
+  .get("/", async () => {
+    return Bun.file("./public/index.html");
   })
   .all("*", async ({ request }: { request: Request }) => {
     const headersObj: Record<string, string> = {};

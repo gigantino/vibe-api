@@ -10,6 +10,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@elysiajs/static": "^1.2.0",
     "elysia": "^1.2.25",
     "elysia-rate-limit": "^4.3.0",
     "express": "^5.1.0",
