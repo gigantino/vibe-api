@@ -1,7 +1,7 @@
 import "./env";
 import OpenAI from "openai";
 import { Elysia, error } from "elysia";
-import { rateLimit } from "elysia-rate-limit";
+import { rateLimit, defaultOptions } from "elysia-rate-limit";
 import { Database } from "bun:sqlite";
 import { cloudflareGenerator } from "./cloudflare";
 
@@ -35,7 +35,9 @@ const app = new Elysia()
           }),
         }
       ),
-      generator: cloudflareGenerator,
+      generator: Bun.env.IS_BEHIND_CLOUDFLARE_TUNNEL
+        ? cloudflareGenerator
+        : defaultOptions.generator,
       skip: (request) => {
         const authHeader = request.headers.get("X-VibeApi-Authorization");
         return authHeader === Bun.env.AUTHORIZATION_KEY;
