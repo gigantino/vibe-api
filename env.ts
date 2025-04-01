@@ -8,6 +8,7 @@ const envVariables = z.object({
   PORT: z.string(),
   IS_BEHIND_CLOUDFLARE_TUNNEL: z.string(),
   POSTHOG_PROJECT_API_KEY: z.string().optional(),
+  POSTHOG_API_HOST: z.string().optional(),
 });
 
 envVariables.parse(process.env);
