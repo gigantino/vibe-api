@@ -2,7 +2,7 @@
 
 Do you consider yourself a [vibe coder](https://en.wikipedia.org/wiki/Vibe_coding)? Then why waste your precious vibe-checking energy building APIs when the vibes alone can give you everything you could ever dream of?
 
-Forget documentation. Forget strict routing. With the power of ~vibes~, every endpoint is already there—waiting for you. Want your IP address? Hit up https://vibe-api.ggtn.ch/whats-my-ip, or honestly, misspell it wildly—it'll probably still vibe-check correctly. Need a random joke? Say less. https://vibe-api.ggtn.ch/random-joke will deliver one—most likely an unfunny one, but hey, it's the vibe that counts.
+Forget documentation. Forget strict routing. With the power of ~ vibes ~, every endpoint is already there—waiting for you. Want your IP address? Hit up https://vibe-api.ggtn.ch/whats-my-ip, or honestly, misspell it wildly—it'll probably still vibe-check correctly. Need a random joke? Say less. https://vibe-api.ggtn.ch/random-joke will deliver one—most likely an unfunny one, but hey, it's the vibe that counts.
 
 Is it fast? Absolutely not. But does it vibe? As long as you don't somehow confuse ChatGPT, the answer is a solid probably.
 
