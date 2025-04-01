@@ -17,9 +17,9 @@ Is it fast? Absolutely not. But does it vibe? As long as you don't somehow confu
 
 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/gigantino/vibe-api.git
-   ```
+```bash
+git clone https://github.com/gigantino/vibe-api.git
+```
 
 2. **Navigate to the project directory and install dependencies:**
 
