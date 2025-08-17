@@ -1,0 +1,15 @@
+[package]
+name = "vibe-api"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4.11.0"
+actix-web-ratelimit = "0.1.1"
+anyhow = "1.0.99"
+dotenv = "0.15.0"
+ipnet = "2.11.0"
+openai-api-rs = "6.0.9"
+regex = "1.11.1"
+rusqlite = "0.37.0"
+tokio = { version = "1.47.1", features = ["sync"] }
