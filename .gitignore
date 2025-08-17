@@ -1,6 +1,7 @@
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
 
 # Logs
+.helix/
 
 logs
 _.log
@@ -176,3 +177,7 @@ dist
 
 # Database containing the request history used for schema validation
 history.db
+
+# Added by cargo
+
+/target
